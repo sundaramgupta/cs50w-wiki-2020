@@ -1,7 +1,7 @@
 {% extends "encyclopedia/layout.html" %}
 
 {% block title %}
-    Create a page
+    Create a page 
 {% endblock %}
 
 {% block body %}
@@ -10,6 +10,7 @@
     	{{ message }}
     {% endif %}
     <form method="post" action='edit'>
+    	<input type="submit" value="save" name="save" class="btn btn-success my-3" />
 	    <div class="form" method="post" action='create'>
 	    	{% csrf_token%}
 	    	<label for="title">Title</label>
@@ -18,13 +19,8 @@
 	        	value="{{ title }}"
 	        {%endif%}
 	        />
-	        <label for="content">Content</label>
-	        <input type="text" class="form-control" name="content" placeholder="Content of the page"
-	        {% if content %}
-	        	value="{{ content }}"
-	        {% endif %}
-	        />
-	        <input type="submit" value="submit" name="submit" class="btn btn-success my-3" />
+	        <br>
+	        <textarea name="content">{{ content }}</textarea>
 	    </div>
 	</form>
 {% endblock %}
