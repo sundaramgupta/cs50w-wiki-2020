@@ -8,4 +8,5 @@ urlpatterns = [
     path("create", views.create, name="create"),
     path("search", views.search, name="search"),
     path("wiki/edit/<title>", views.edit, name="edit"),
+    path("random", views.random, name="random")
 ]

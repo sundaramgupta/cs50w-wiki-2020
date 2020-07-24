@@ -50,9 +50,13 @@ def edit(request, title):
 	content=util.get_entry(title)
 	if request.method=='POST':
 		content = request.POST.get("content")
+		title=request.POST.get("title")
 		util.save_entry(title, content)
 		return redirect("entry", title=title)
 	return render(request, "encyclopedia/edit.html",{
 		"title": title,
 		"content": content
 		})
+def random(request):
+	return render(request, "encyclopedia/edit.html")
+

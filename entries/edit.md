@@ -1,1 +1,1 @@
-# GitGit is a version control tool that can be used to keep track of versions of a software project.## GitHubGitHub is an online service for hostin
+# GitGit 
