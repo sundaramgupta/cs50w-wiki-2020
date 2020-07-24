@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from markdown2 import markdown
+from random import randint
 
 from . import util
 
@@ -58,5 +59,7 @@ def edit(request, title):
 		"content": content
 		})
 def random(request):
-	return render(request, "encyclopedia/edit.html")
+	entries=util.list_entries()
+	rand_entry = entries[randint(0, len(entries)-1)]
+	return redirect('entry', title=rand_entry)
 
