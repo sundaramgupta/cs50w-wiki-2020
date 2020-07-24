@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+	{% if message %}
+		{% for i in message %}
+				<a href="{% url 'search' %}"><li>{{ i }}</li></a>
+		{% endfor %}
+	{% endif %}
+{% endblock %}
