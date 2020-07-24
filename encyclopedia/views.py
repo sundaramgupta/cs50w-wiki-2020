@@ -46,8 +46,13 @@ def search(request):
 		return render(request, "encyclopedia/index.html",{
 			"entries": substring
 			})
-
-
-
-
-
+def edit(request, title):
+	content=util.get_entry(title)
+	if request.method=='POST':
+		content = request.POST.get("content")
+		util.save_entry(title, content)
+		return redirect("entry", title=title)
+	return render(request, "encyclopedia/edit.html",{
+		"title": title,
+		"content": content
+		})

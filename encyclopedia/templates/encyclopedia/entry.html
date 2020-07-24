@@ -6,5 +6,6 @@
 
 {% block body %}
 	{{ content|safe }}
+	<a href=edit/{{ title }}><input type="submit" value="Edit" name="edit" class="btn btn-success my-3" /></a>
 
 {% endblock %}
