@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create a page
+{% endblock %}
+
+{% block body %}
+    <h1>Create a page</h1>
+    {% if message %}
+    	{{ message }}
+    {% endif %}
+    <form method="post" action='create'>
+	    <div class="form" method="post" action='create'>
+	    	{% csrf_token%}
+	    	<label for="title">Title</label>
+	    	<input type="text" class="form-control" name="title" placeholder="Title of the page" 
+	        {%if title%}
+	        value="{{ title }}"
+	        {%endif%}
+	        />
+	        <label for="content">Content</label>
+	        <input type="text" class="form-control" name="content" placeholder="Content of the page"
+	        {% if content %}
+	        	value="{{ content }}"
+	        {% endif %}
+	        />
+	        <input type="submit" value="submit" name="submit" class="btn btn-success my-3" />
+	    </div>
+	</form>
+{% endblock %}
