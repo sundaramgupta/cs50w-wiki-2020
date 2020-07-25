@@ -1,1 +1,2 @@
-##react A framework of javascript
+#React
+React is a framework of JavaScript.
