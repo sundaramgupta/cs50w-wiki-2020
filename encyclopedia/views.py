@@ -49,7 +49,7 @@ def create(request):
 
 	return render(request, "encyclopedia/create.html")
 
-def search(request):
+def search(request): #tip # consider adding functionality of searching entries based on short queries and listing out whole queries related to that
 	query=request.GET.get('q')
 	if query in util.list_entries():
 
